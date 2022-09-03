@@ -161,7 +161,7 @@ export default function Home() {
         buyMeACoffee.off("NewMemo", onNewMemo);
       }
     }
-  }, []);
+  });
   
   return (
     <div className={styles.container}>
@@ -179,7 +179,7 @@ export default function Home() {
         {currentAccount ? (
           <div>
             <form>
-              <div class="formgroup">
+              <div>
                 <label>
                   Name
                 </label>
@@ -193,7 +193,7 @@ export default function Home() {
                   />
               </div>
               <br/>
-              <div class="formgroup">
+              <div>
                 <label>
                   Send Web3Snack a message
                 </label>
@@ -228,21 +228,11 @@ export default function Home() {
       {currentAccount && (memos.map((memo, idx) => {
         return (
           <div key={idx} style={{border:"2px solid", "border-radius":"5px", padding: "5px", margin: "5px"}}>
-            <p style={{"font-weight":"bold"}}>"{memo.message}"</p>
+            <p style={{ "font-weight" : "bold" }}>{memo.message}</p>
             <p>From: {memo.name} at {memo.timestamp.toString()}</p>
           </div>
         )
       }))}
-
-      <footer className={styles.footer}>
-        <a
-          href="https://alchemy.com/?a=roadtoweb3weektwo"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Created by @thatguyintech for Alchemy's Road to Web3 lesson two!
-        </a>
-      </footer>
     </div>
   )
 }
