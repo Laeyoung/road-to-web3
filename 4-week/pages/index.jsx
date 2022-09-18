@@ -72,7 +72,7 @@ const Home = ({ API_KEY }) => {
         {
           NFTs.map(nft => {
             return (
-              <NFTCard nft={nft}></NFTCard>
+              <NFTCard key={nft.title} nft={nft}></NFTCard>
             )
           })
         }
